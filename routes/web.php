@@ -2,9 +2,6 @@
 
 use App\Http\Controllers\FormController;
 use Illuminate\Support\Facades\Route;
-use Illuminate\Support\Facades\DB;
-use Rap2hpoutre\FastExcel\FastExcel;
-use App\Http\Controllers\LoginController;
 
 /*
 |--------------------------------------------------------------------------
@@ -25,7 +22,6 @@ Route::controller(FormController::class)->group(function () {
     Route::get('/formulaire', 'create');
     Route::post('/store_formulaire', 'store');
     Route::get('/show_formulaire', 'all_show');
-
     Route::get('/showStudents/{school}', 'show');
     Route::get('/edit_formulaire/{school}', 'edit');
     Route::post('/update_Student/{id}', 'update');
@@ -33,14 +29,6 @@ Route::controller(FormController::class)->group(function () {
     Route::get('/all_delete_base', 'alldestroy');
     Route::get('/search', 'operation_search')->name('users.search');
     Route::get('/all_delete_base', 'alldestroy');
-
-    Route::get('/download', function() {
-        $formdata= DB::table('school')->get();
-        return(new FastExcel($formdata))->download('inscription.xlsx');
-    });
-    Route::get('/',[LoginController::class,'index'])->name('login');;
-    Route::post('/login',[LoginController::class,'login']);
-    Route::get('/logout',[LoginController::class,'logout']);
 });
 
 //Route::get('/formulaire',[FormController::class,'create']);

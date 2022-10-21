@@ -129,7 +129,6 @@
     </div>
 </div>
 
-@if(isset(Auth::user()->email))
 <div class="container mt-4">
     <div class="row">
         <div class="col-md-12">
@@ -137,7 +136,6 @@
                 <div class="card-header">
 							<h2>STATISTIQUES  <b>STUDENTS</b></h2>
 							<h2>ALL STUDENTS  <b>NUMBERS {{$studentscount_count}}</b></h2>
-                            <a href="/download">telecharger</a>
 						
                         
                         <button type="button" class="btn btn-primary float-end" data-bs-toggle="modal" data-bs-target="#studentAddModal">
@@ -180,12 +178,7 @@
             </div>
         </div>
     </div>
-    <a href="{{url('logout')}}">logout</a>
 </div>
-@else
-<h1>notelogger in</h1>
-<h1>try to login </h1>
-@endif
 
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
