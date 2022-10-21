@@ -184,7 +184,7 @@
 </div>
 @else
 <h1>notelogger in</h1>
-<h1>try to login as admin</h1>
+<h1>try to login </h1>
 @endif
 
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
